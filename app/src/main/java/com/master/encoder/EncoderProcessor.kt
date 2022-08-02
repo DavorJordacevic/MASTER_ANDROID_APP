@@ -15,7 +15,6 @@ object EncoderProcessor{
     private val MEAN = Scalar(0.485, 0.456, 0.406)
     lateinit var dnnNet: Net
     private var layerNames = mutableListOf<String>()
-    private val desiredKP = Mat(5, 2, CvType.CV_32F)
 
     init {
         println("Singleton encoder class invoked.")
@@ -35,16 +34,6 @@ object EncoderProcessor{
     // Set the default layer names and keypoints
     fun setDefaultValues(){
         layerNames = dnnNet.unconnectedOutLayersNames
-        desiredKP.put(0, 0, 38.2946)
-        desiredKP.put(0, 1, 59.6963)
-        desiredKP.put(1, 0, 73.5318)
-        desiredKP.put(1, 1, 59.5014)
-        desiredKP.put(2, 0, 56.0252)
-        desiredKP.put(2, 1, 79.7366)
-        desiredKP.put(3, 0, 41.5493)
-        desiredKP.put(3, 1, 100.3655)
-        desiredKP.put(4, 0, 70.729904)
-        desiredKP.put(4, 1, 100.2041)
     }
 
     // Preprocess faces
